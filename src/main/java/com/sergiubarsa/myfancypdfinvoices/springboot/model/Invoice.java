@@ -19,6 +19,10 @@ public class Invoice {
         this.pdfUrl = pdfUrl;
     }
 
+    public Invoice() {
+
+    }
+
     public String getId() {
         return id;
     }

@@ -3,6 +3,7 @@ package com.sergiubarsa.myfancypdfinvoices.springboot.service;
 import com.sergiubarsa.myfancypdfinvoices.springboot.model.User;
 import org.springframework.stereotype.Component;
 
+
 import java.util.UUID;
 
 @Component
