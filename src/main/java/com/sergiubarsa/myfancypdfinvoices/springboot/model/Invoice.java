@@ -13,6 +13,12 @@ public class Invoice {
 
     private int amount;
 
+    public Invoice(String userId, int amount, String pdfUrl) {
+        this.userId = userId;
+        this.amount = amount;
+        this.pdfUrl = pdfUrl;
+    }
+
     public String getId() {
         return id;
     }
