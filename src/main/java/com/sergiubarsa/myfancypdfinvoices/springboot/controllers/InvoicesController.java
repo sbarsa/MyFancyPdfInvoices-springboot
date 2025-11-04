@@ -4,10 +4,7 @@ import com.sergiubarsa.myfancypdfinvoices.springboot.dto.InvoiceDto;
 import com.sergiubarsa.myfancypdfinvoices.springboot.model.Invoice;
 import com.sergiubarsa.myfancypdfinvoices.springboot.service.InvoiceService;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -26,7 +23,13 @@ public class InvoicesController {
         return invoiceService.findAll();
     }
 
+    @GetMapping("/invoices/{userId}")
+    public List<Invoice> findByUserId(@PathVariable("userId") String userId) {
+        return invoiceService.findByUserId(userId);
+    }
+
     @PostMapping("/invoices")
+
     public Invoice create(@Valid @RequestBody InvoiceDto invoiceDto) {
         return invoiceService.create(invoiceDto.getUserId(), invoiceDto.getAmount());
     }

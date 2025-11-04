@@ -47,6 +47,10 @@ public class InvoiceService {
         return invoiceRepository.findAll();
     }
 
+    public List<Invoice> findByUserId(String userId) {
+        return invoiceRepository.findByUserId(userId);
+    }
+
     public Invoice create(String userId, Integer amount) {
         String generatedPdfUrl = cdnUrl + "/images/default/sample.pdf";
 
