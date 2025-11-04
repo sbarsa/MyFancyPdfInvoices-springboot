@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -21,7 +22,7 @@ public class InvoicesController {
     }
 
     @GetMapping("/invoices")
-    public List<Invoice> findAll() {
+    public Iterable<Invoice> findAll() {
         return invoiceService.findAll();
     }
 

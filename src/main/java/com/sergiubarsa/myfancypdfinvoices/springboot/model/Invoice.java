@@ -1,8 +1,13 @@
 package com.sergiubarsa.myfancypdfinvoices.springboot.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("invoices")
 public class Invoice {
+
+    @Id
     private String id;
 
     @JsonProperty("user_id")
